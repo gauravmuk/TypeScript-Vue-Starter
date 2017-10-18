@@ -3,6 +3,8 @@
     <div>
         <h1>{{ fullMessage }}</h1>
         <button @click="clicked">Click</button>
+        <!--<button @click="parentClicked">Parent Click</button>-->
+        <router-link to="hello-ts">Hello TS</router-link>
     </div>
 </template>
 

@@ -1,16 +1,20 @@
-import Vue from "vue";
-import HelloComponent from "./components/Hello.vue";
+import Vue from 'vue';
+import HelloComponent from './components/Hello.vue';
+import HelloTSComponent from './components/HelloTS.vue';
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
+Vue.config.productionTip = false;
+
+const router = new VueRouter({
+    routes: [
+        { path: '/', name: 'Hello', component: HelloComponent},
+        { path: '/hello-ts', name: 'HelloTS', component: HelloTSComponent}
+    ]
+});
 
 let v = new Vue({
     el: "#app",
-    template: `
-    <div>
-        Name: <input v-model="name" type="text">
-        <hello-component :name="name" :initialEnthusiasm="5" />
-    </div>
-    `,
-    data: { name: "World" },
-    components: {
-        HelloComponent
-    }
+    router,
+    template: `<router-view></router-view>`
 });
