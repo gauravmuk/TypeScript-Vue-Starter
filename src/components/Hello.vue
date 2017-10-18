@@ -1,40 +1,31 @@
 <!-- src/components/Hello.vue -->
 <template>
     <div>
-        <div class="greeting">Hello {{name}}{{exclamationMarks}}</div>
-        <button @click="decrement">-</button>
-        <button @click="increment">+</button>
+        <h1>{{ fullMessage }}</h1>
+        <button @click="clicked">Click</button>
     </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+    import Vue from 'vue';
+    import Component from 'vue-class-component';
 
-export default Vue.extend({
-    props: ['name', 'initialEnthusiasm'],
-    data() {
-        return {
-            enthusiasm: this.initialEnthusiasm,
+    @Component({})
+    export default class Hello extends Vue {
+        message: string = 'Hello World'
+
+        get fullMessage() {
+            return `${this.message} from TypeScript`
         }
-    },
-    methods: {
-        increment() { this.enthusiasm++; },
-        decrement() {
-            if (this.enthusiasm > 1) {
-                this.enthusiasm--;
-            }
-        },
-    },
-    computed: {
-        exclamationMarks(): string {
-            return Array(this.enthusiasm + 1).join('!');
+
+        created() {
+            console.log('created');
+        }
+
+        clicked() {
+            console.log('clicked');
         }
     }
-});
 </script>
 
-<style>
-.greeting {
-    font-size: 20px;
-}
-</style>
+<style></style>
