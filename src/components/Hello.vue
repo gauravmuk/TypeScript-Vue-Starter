@@ -1,7 +1,7 @@
 <!-- src/components/Hello.vue -->
 <template>
     <div>
-        <h1>{{ fullMessage }}</h1>
+        <h1 v-colorDirective.background="'blue'">{{ fullMessage }}</h1>
         <button @click="clicked">Click</button>
         <!--<button @click="parentClicked">Parent Click</button>-->
         <router-link to="hello-ts">Hello TS</router-link>
@@ -11,8 +11,13 @@
 <script lang="ts">
     import Vue from 'vue';
     import Component from 'vue-class-component';
+    import colorDirective from '../directives/color-directive';
 
-    @Component({})
+    @Component({
+        directives: {
+            colorDirective
+        }
+    })
     export default class Hello extends Vue {
         message: string = 'Hello World'
 
