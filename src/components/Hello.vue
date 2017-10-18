@@ -27,6 +27,11 @@
         clicked() {
             console.log('clicked');
         }
+
+        beforeRouteEnter(to, from, next) {
+            console.log('yolo');
+            next();
+        }
     }
 </script>
 

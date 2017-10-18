@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import './hooks';
 import HelloComponent from './components/Hello.vue';
 import HelloTSComponent from './components/HelloTS.vue';
 import VueRouter from 'vue-router';
