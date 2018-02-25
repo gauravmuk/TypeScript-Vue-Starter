@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "storybook": "start-storybook -p 9002 -c .storybook",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,6 +20,8 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@storybook/vue": "^3.3.14",
+    "babel-core": "^6.26.0",
     "css-loader": "^0.28.7",
     "ts-loader": "^3.0.2",
     "typescript": "^2.5.3",
