@@ -19,12 +19,34 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "babel-eslint": "^8.0.3",
     "css-loader": "^0.28.7",
+    "eslint": "^4.12.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-vue": "^4.0.0-beta.2",
+    "jest": "^22.0.3",
+    "jest-serializer-vue": "^0.3.0",
     "ts-loader": "^3.0.2",
+    "tslint": "^5.8.0",
+    "tslint-loader": "^3.5.3",
     "typescript": "^2.5.3",
     "vue-class-component": "^6.0.0",
+    "vue-jest": "^1.4.0",
     "vue-loader": "^13.3.0",
+    "vue-server-renderer": "^2.5.13",
     "vue-template-compiler": "^2.5.2",
+    "vue-test-utils": "^1.0.0-beta.8",
     "webpack": "^3.8.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "mapCoverage": true
   }
 }

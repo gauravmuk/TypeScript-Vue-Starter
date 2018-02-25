@@ -21,8 +21,17 @@
     export default class Hello extends Vue {
         message: string = 'Hello World'
 
+        yolo: Array<string>
+
+        bolo: Array<boolean>
+
+
         get fullMessage() {
             return `${this.message} from TypeScript`
+        }
+
+        mounted() {
+            this.yolo = this.bolo as Array<string>;
         }
 
         created() {
